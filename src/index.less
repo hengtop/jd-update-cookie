@@ -1,0 +1,29 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.App {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  background-color: #fff;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+  }
+  .title {
+    text-align: center;
+    margin: 20px 0;
+  }
+}
