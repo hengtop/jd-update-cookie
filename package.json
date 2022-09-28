@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.23.2",
     "heng-request": "^2.0.2",
     "react": "^18.2.0",

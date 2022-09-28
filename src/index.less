@@ -6,6 +6,8 @@ html {
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
+  background-image: url("./assets/img//bg.webp");
+  background-size: cover;
 }
 
 .App {
@@ -14,13 +16,20 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
-  height: 500px;
+  height: 350px;
+  padding: 10px;
   overflow: hidden;
   background-color: #fff;
-  @media screen and (max-width: 500px) {
+  border-radius: 5px;
+  @media screen and (max-width: 575px) {
     width: 100%;
     height: 500px;
     padding: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    height: 500px;
+    padding: 10px 20px;
   }
   .title {
     text-align: center;
