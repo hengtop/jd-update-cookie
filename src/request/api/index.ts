@@ -3,7 +3,7 @@ import httpRequest from "..";
 import { SubmitValues } from "../../components/form";
 
 export const updateCookie = (params: SubmitValues) => {
-  return httpRequest.request({
+  return httpRequest.request<{ message: string }>({
     url: "/updateCookie",
     method: "PUT",
     data: params,
