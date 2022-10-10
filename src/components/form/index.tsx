@@ -70,7 +70,7 @@ const form = () => {
           },
         ]}
       >
-        <Input />
+        <Input placeholder="ck_名字首字母拼音" />
       </Form.Item>
 
       <Form.Item
@@ -83,7 +83,7 @@ const form = () => {
           },
         ]}
       >
-        <Input.Password />
+        <Input.Password placeholder="忘记了就填666@666" />
       </Form.Item>
       <Form.Item
         className="text-area"
@@ -94,10 +94,14 @@ const form = () => {
             required: true,
             message: "请填写你的cookie",
           },
+          {
+            pattern: /^(pt_key.*pt_pin.*)|(pt_pin.*pt_key.*)$/g,
+            message: "请填写正确格式cookie",
+          },
         ]}
       >
         <Input.TextArea
-          placeholder="cookie格式  pt_key=xxxxx; pt_pin=xxxxx;"
+          placeholder="cookie格式  pt_key=xxxxx; pt_pin=xxxxx; 校验了的哈~"
           rows={3}
         />
       </Form.Item>
