@@ -11,3 +11,7 @@ export const successMsg = (content: string) => {
 export const errorMsg = (content: string) => {
   message.error(content || "错误");
 };
+
+export const defaultMsg = (content: string) => {
+  message.info(content);
+};

@@ -1,7 +1,7 @@
 import { Button, Form, Input } from "antd";
 import { useCallback, useState } from "react";
 import { updateCookie } from "../../request/api";
-import { successMsg, errorMsg } from "../../utils";
+import { successMsg, errorMsg, defaultMsg } from "../../utils";
 
 export interface SubmitValues {
   name: string;
@@ -19,13 +19,13 @@ const form = () => {
       // 判断响应内容
       switch (res?.message) {
         case "password error":
-          errorMsg("密码错误");
+          errorMsg(res?.message);
           break;
         case "success":
-          successMsg("更新成功");
+          successMsg(res?.message);
           break;
         default:
-          successMsg("请求成功");
+          defaultMsg(res?.message);
       }
     } catch (error) {
       errorMsg("请求错误");
