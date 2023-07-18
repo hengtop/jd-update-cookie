@@ -1,5 +1,5 @@
 import { Button, Form, Input } from "antd";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useRef } from "react";
 import { updateCookie } from "../../request/api";
 import { successMsg, errorMsg, defaultMsg } from "../../utils";
 
@@ -10,6 +10,7 @@ export interface SubmitValues {
 }
 
 const form = () => {
+  const location = useRef(new URL(window.location.href).searchParams);
   const [isLoading, setIsLoading] = useState(false);
   const [form] = Form.useForm<SubmitValues>();
   const onFinish = async (values: SubmitValues) => {
@@ -69,6 +70,7 @@ const form = () => {
             message: "请输入用户名",
           },
         ]}
+        initialValue={location.current.get("name")}
       >
         <Input placeholder="ck_名字首字母拼音" />
       </Form.Item>
@@ -82,6 +84,7 @@ const form = () => {
             message: "请输入你的密码",
           },
         ]}
+        initialValue={location.current.get("pw")}
       >
         <Input.Password placeholder="忘记了就填666@666" />
       </Form.Item>
@@ -99,6 +102,7 @@ const form = () => {
             message: "请填写正确格式cookie",
           },
         ]}
+        initialValue={location.current.get("ck")}
       >
         <Input.TextArea
           placeholder="cookie格式  pt_key=xxxxx; pt_pin=xxxxx; 校验了的哈~"
